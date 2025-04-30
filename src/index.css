@@ -25,7 +25,7 @@ a:hover {
 
 h1 {
 	font-size: 3.2em;
-	padding-top: 60px;
+	padding-top: 20px;
 	line-height: 1.1;
 }
 
@@ -55,10 +55,26 @@ button:focus-visible {
 	}
 	@media screen and (max-width: 768px) {
 		.week-grid {
+			display: grid;
 			grid-template-columns: repeat(3, 1fr); /* ✅ Switches to 3 columns */
 			grid-template-rows: repeat(3, auto); /* ✅ Adjusts row count */
+			gap: 8px; /* Adds spacing */
+		}
+
+		.app-layout {
+			display: flex; /* Ensures a responsive webpage layout */
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
 		}
 	}
+	@media screen and (max-width: 768px) {
+		.app-layout {
+			display: flex;
+			flex-direction: column; /* App-like layout */
+		}
+	}
+
 	a:hover {
 		color: #747bff;
 	}

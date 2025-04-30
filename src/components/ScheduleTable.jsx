@@ -29,15 +29,15 @@ const ScheduleTable = ({ events = [] }) => {
 												<div className="timetable-item">
 													<div className="timetable-item-img">
 														<img
-															src="https://www.bootdey.com/image/100x80/00FFFF/000000"
+															src="https://media.istockphoto.com/id/181866332/photo/red-wall-calendar.jpg?s=1024x1024&w=is&k=20&c=4jpxBh7eHc5VA2rqXdl3_s2NUPFeJpDSW4-q-H1rkOs="
 															alt={`${day} Event`}
 														/>
 													</div>
 													<div className="timetable-item-main">
-														<div className="timetable-item-time">Time TBD</div>
 														<div className="timetable-item-name">
 															{day} Events
 														</div>
+														<div className="timetable-item-time">Time TBD</div>
 														<Link
 															to={`/add-event?day=${day}`}
 															className="btn btn-primary btn-book"

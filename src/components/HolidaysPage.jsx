@@ -9,28 +9,24 @@ const HolidaysPage = () => {
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log("Holiday Data:", data.holidays); // ✅ Debugging step
-
-				// ✅ Filter only holidays from 2025
-				const upcomingHolidays = data.holidays.filter((holiday) =>
-					holiday.prettyDate.startsWith("2025")
-				);
-				setHolidays(upcomingHolidays);
+				if (data.holidays) {
+					const upcomingHolidays = data.holidays.filter((holiday) =>
+						holiday.prettyDate.startsWith("2025")
+					);
+					setHolidays(upcomingHolidays);
+				}
 			})
 			.catch((error) => console.error("Error fetching holidays:", error));
 	}, []);
 
 	return (
-		<div>
-			<h2>Upcoming Holidays 🎉</h2>
+		<div className="holiday-list">
 			{holidays.length > 0 ? (
-				<ul>
-					{holidays.map((holiday, index) => (
-						<li key={index}>
-							{holiday.name} - {holiday.prettyDate} ({holiday.dayOfWeek})
-						</li>
-					))}
-				</ul>
+				holidays.map((holiday, index) => (
+					<p key={index}>
+						{holiday.name} - {holiday.prettyDate} ({holiday.dayOfWeek})
+					</p>
+				))
 			) : (
 				<p>No holidays found for 2025.</p>
 			)}
