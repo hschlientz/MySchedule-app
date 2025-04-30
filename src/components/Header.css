@@ -1,0 +1,54 @@
+.navbar {
+	font-family: "Times New Roman", Times, serif;
+	color: white;
+	position: fixed;
+	padding: 10px 20px;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+	font-size: 1.8rem !important; /*  Ensures nav links are large */
+	padding: 5px 5px;
+	color: white !important; /*  Ensures nav links are white */
+	margin-right: 10px;
+}
+.navbar-nav {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+container-fluid {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.header {
+	display: flex; /* Aligns title & links in a row */
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	flex-wrap: wrap; /* Prevents overflow but keeps layout clean */
+}
+
+.content-wrapper {
+	margin-top: 80px;
+	display: block;
+	min-height: 100vh; /* Ensures it takes up full viewport height */
+	overflow: auto;
+}
+.nav {
+	z-index: 9999 !important; /* Ensures the nav is above all other content */
+	display: flex;
+	gap: 20px; /* Adds spacing between links */
+	flex-wrap: nowrap; /* Prevents links from dropping to new lines */
+	border: 3px solid red;
+	background-color: rgba(
+		255,
+		0,
+		0,
+		0.3
+	) !important; /* 🛠 Transparent red for debugging */
+}
